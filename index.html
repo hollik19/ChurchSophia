@@ -19,6 +19,8 @@
             min-height: 100vh;
         }
 
+
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -44,7 +46,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
             animation: shine 3s ease-in-out infinite;
         }
 
@@ -53,10 +55,47 @@
             50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
-        .church-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #8B4513;
+        .rust-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #d4af37;
+        }
+
+        .rust-logo::before {
+            content: 'RUST';
+            position: absolute;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .rust-logo::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+            animation: logoShine 2s ease-in-out infinite;
+        }
+
+        @keyframes logoShine {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .server-title {
@@ -74,14 +113,15 @@
         }
 
         .server-info {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
             color: white;
             padding: 15px 30px;
             border-radius: 25px;
             display: inline-block;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            border: 2px solid #d4af37;
         }
 
         .section {
@@ -103,7 +143,7 @@
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid #ff6b35;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -114,14 +154,6 @@
             color: #34495e;
             margin-top: 25px;
             margin-bottom: 15px;
-        }
-
-        .welcome-text {
-            font-size: 1.2rem;
-            text-align: center;
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
         }
 
         .server-features {
@@ -135,7 +167,7 @@
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #ff6b35;
             transition: all 0.3s ease;
         }
 
@@ -152,26 +184,36 @@
         }
 
         .reputation-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
             margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            border: 2px solid #dee2e6;
         }
 
         .tier-card {
-            padding: 20px;
-            border-radius: 10px;
+            padding: 15px 20px;
+            border-radius: 25px;
             text-align: center;
             color: white;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 2px solid transparent;
+            min-width: 140px;
+            flex: 0 1 auto;
         }
 
         .tier-card:hover {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-3px) scale(1.02);
+            border-color: #d4af37;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
 
         .tier-card::before {
@@ -189,21 +231,26 @@
             left: 100%;
         }
 
-        .tier-infidel { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-        .tier-sinner { background: linear-gradient(135deg, #f39c12, #e67e22); }
-        .tier-average { background: linear-gradient(135deg, #f1c40f, #f39c12); color: #333; }
-        .tier-disciple { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }
-        .tier-prophet { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .tier-infidel { background: linear-gradient(135deg, #8b0000, #660000); }
+        .tier-sinner { background: linear-gradient(135deg, #ff4500, #cc3300); }
+        .tier-average { background: linear-gradient(135deg, #ff6b35, #e55a2b); }
+        .tier-disciple { background: linear-gradient(135deg, #8b4513, #654321); }
+        .tier-prophet { background: linear-gradient(135deg, #d4af37, #b8941f); color: #2c1810; }
 
         .tier-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
         .tier-card .rep-range {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.9;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+        }
+
+        .tier-card p {
+            font-size: 0.85rem;
+            margin: 0;
         }
 
         .reputation-actions {
@@ -214,21 +261,22 @@
         }
 
         .action-card {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.6), rgba(101, 67, 33, 0.6));
             padding: 15px;
             border-radius: 8px;
-            border: 1px solid #e9ecef;
+            border: 1px solid #8b4513;
             transition: all 0.3s ease;
         }
 
         .action-card:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
             transform: translateY(-2px);
+            border-color: #d4af37;
         }
 
         .action-positive { border-left: 4px solid #27ae60; }
         .action-negative { border-left: 4px solid #e74c3c; }
-        .action-neutral { border-left: 4px solid #3498db; }
+        .action-neutral { border-left: 4px solid #ff6b35; }
 
         .connect-section {
             text-align: center;
@@ -247,7 +295,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
 
@@ -259,12 +307,13 @@
         .server-ip {
             font-size: 2rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
             padding: 15px 30px;
             border-radius: 10px;
             display: inline-block;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            border: 2px solid #d4af37;
         }
 
         .benefits-grid {
@@ -275,17 +324,19 @@
         }
 
         .benefit-card {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.6), rgba(101, 67, 33, 0.6));
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            border: 1px solid #8b4513;
         }
 
         .benefit-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+            border-color: #d4af37;
         }
 
         .benefit-icon {
@@ -303,6 +354,62 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
+        .sophia-banner {
+            text-align: center;
+            margin: 20px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #ff69b4, #ff1493, #da70d6);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #d4af37;
+        }
+
+        .sophia-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.2) 50%, transparent 70%);
+            animation: bannerShine 3s ease-in-out infinite;
+        }
+
+        @keyframes bannerShine {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .rust-themed-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .rust-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8b4513, #654321);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .rust-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
         @media (max-width: 768px) {
             .server-title {
                 font-size: 2.5rem;
@@ -317,23 +424,27 @@
             }
         }
 
-        .status-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-left: 10px;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.imgur.com/ZZJhppZ.jpeg" alt="Church of Sophia Disciples Logo" style="max-width: 100%; height: auto; max-height: 300px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            <div class="rust-logo"></div>
+            <div class="rust-themed-icons">
+                <div class="rust-icon">⚒️</div>
+                <div class="rust-icon">🏠</div>
+                <div class="rust-icon">🔫</div>
+                <div class="rust-icon">🌲</div>
+                <div class="rust-icon">🪓</div>
+                <div class="rust-icon">🛠️</div>
+            </div>
             <h1 class="server-title">Church of Sophia Disciples</h1>
+            <p class="server-subtitle">🎮 RUST GAME SERVER 🎮</p>
             <p class="server-subtitle">Procedural Map - Monthly Wipes - EU/NL Hosted</p>
             <div class="server-info">
                 50% Upkeep • No Blueprint Resets • Low Ping
@@ -341,10 +452,20 @@
         </div>
 
         <section class="section">
-            <div class="welcome-text">
-                "ALL HAIL SOPHIA" - A place where legends are forged.
+            <div class="sophia-banner">
+                <div style="position: absolute; top: 10px; left: 20px; font-size: 2rem; animation: bounce 2s infinite;">🦄</div>
+                <div style="position: absolute; top: 10px; right: 20px; font-size: 2rem; animation: bounce 2s infinite 0.5s;">🦄</div>
+                <div style="position: absolute; bottom: 10px; left: 30px; font-size: 1.5rem; animation: bounce 2s infinite 1s;">✨</div>
+                <div style="position: absolute; bottom: 10px; right: 30px; font-size: 1.5rem; animation: bounce 2s infinite 1.5s;">✨</div>
+                <h1 style="font-size: 3rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin: 0; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; position: relative; z-index: 1;">
+                    🌸 ALL HAIL SOPHIA 🌸
+                </h1>
+                <div style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-top: 10px; font-style: italic; position: relative; z-index: 1;">
+                    ✨ Where Magic and Legends Unite in RUST ✨
+                </div>
             </div>
-            <h2>🏠 Welcome</h2>
+            
+            <h2>🏠 Welcome to Our RUST Server</h2>
             <p>Welcome to our relaxed Rust server where building and survival meet in perfect harmony. Our community values respect, cooperation, and the forging of lasting friendships in the harsh world of Rust.</p>
             
             <div class="server-features">
@@ -358,7 +479,7 @@
                 </div>
                 <div class="feature-card">
                     <h4>🌍 EU/NL Hosted</h4>
-                    <p>European hosting ensures low ping and stable connections for the best gaming experience.</p>
+                    <p>European hosting ensures low ping and stable connections for the best RUST gaming experience.</p>
                 </div>
             </div>
         </section>
@@ -476,21 +597,34 @@
         </section>
 
         <section class="connect-section">
-            <h2>🎮 Join Our Community</h2>
-            <p>Ready to forge your legend? Connect now and start your journey!</p>
+            <h2>🎮 Join Our RUST Community</h2>
+            <p>Ready to forge your legend in the world of RUST? Connect now and start your journey!</p>
             
             <div class="server-ip">
-                ALL HAIL SOPHIA
+                <a href="https://discord.gg/krah7yy8" target="_blank" style="color: white; text-decoration: none; font-weight: bold;">
+                    🦄 DISCORD 🦄
+                </a>
             </div>
             
-            <p>Check your reputation anytime with <strong>/rep</strong></p>
-            <p>View other players with <strong>/replist</strong></p>
-            <p>See server stats with <strong>/repstats</strong></p>
+            <div style="margin: 20px 0;">
+                <a href="steam://connect/62.163.6.252:28015" style="background: linear-gradient(135deg, #ff6b35, #ff4500); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4); transition: all 0.3s ease; border: 2px solid #d4af37;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 53, 0.5)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 5px 15px rgba(255, 107, 53, 0.4)'">
+                    🚀 Launch RUST & Connect
+                </a>
+            </div>
+            
+            <p style="font-size: 0.9rem; opacity: 0.8;">Click the button above to automatically launch RUST and connect to our server!</p>
+            
+            <div style="margin: 20px 0; padding: 20px; background: rgba(139, 69, 19, 0.3); border-radius: 10px; border: 1px solid #8b4513;">
+                <p><strong>RUST Server Commands:</strong></p>
+                <p>Check your reputation: <strong>/rep</strong></p>
+                <p>View other players: <strong>/replist</strong></p>
+                <p>See server stats: <strong>/repstats</strong></p>
+            </div>
         </section>
 
         <div class="footer">
-            <p><strong>Church of Sophia Disciples</strong> - ALL HAIL SOPHIA</p>
-            <p><a href="https://discord.gg/krah7yy8" target="_blank" style="color: #3498db; text-decoration: none; font-weight: bold;">Join our Discord community</a> for updates, events, and support!</p>
+            <p><strong>Church of Sophia Disciples - RUST Server</strong><br>Where Magic Meets Survival</p>
+            <p><a href="https://discord.gg/krah7yy8" target="_blank" style="color: #ff69b4; text-decoration: none; font-weight: bold; font-size: 1.1rem;">🦄 Join our Magical Discord Community 🦄</a><br>for RUST updates, events, and support!</p>
         </div>
     </div>
 </body>
