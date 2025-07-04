@@ -19,8 +19,6 @@
             min-height: 100vh;
         }
 
-
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -46,54 +44,11 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
             animation: shine 3s ease-in-out infinite;
         }
 
         @keyframes shine {
-            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .rust-logo {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #ff6b35, #ff4500);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-            position: relative;
-            overflow: hidden;
-            border: 3px solid #d4af37;
-        }
-
-        .rust-logo::before {
-            content: 'RUST';
-            position: absolute;
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .rust-logo::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
-            animation: logoShine 2s ease-in-out infinite;
-        }
-
-        @keyframes logoShine {
             0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
             50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
@@ -261,17 +216,16 @@
         }
 
         .action-card {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.6), rgba(101, 67, 33, 0.6));
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 15px;
             border-radius: 8px;
-            border: 1px solid #8b4513;
+            border: 1px solid #dee2e6;
             transition: all 0.3s ease;
         }
 
         .action-card:hover {
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
-            border-color: #d4af37;
         }
 
         .action-positive { border-left: 4px solid #27ae60; }
@@ -295,7 +249,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
 
@@ -324,19 +278,17 @@
         }
 
         .benefit-card {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.6), rgba(101, 67, 33, 0.6));
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            border: 1px solid #8b4513;
         }
 
         .benefit-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-            border-color: #d4af37;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .benefit-icon {
@@ -366,57 +318,18 @@
             border: 3px solid #d4af37;
         }
 
-        .sophia-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.2) 50%, transparent 70%);
-            animation: bannerShine 3s ease-in-out infinite;
-        }
-
-        @keyframes bannerShine {
-            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .rust-themed-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        .rust-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8b4513, #654321);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #d4af37;
-            border: 2px solid #d4af37;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .rust-icon:hover {
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
-        }
-
         @media (max-width: 768px) {
             .server-title {
                 font-size: 2.5rem;
             }
             
             .reputation-tiers {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tier-card {
+                min-width: 200px;
             }
             
             .server-features {
@@ -598,24 +511,25 @@
 
         <section class="connect-section">
             <h2>🎮 Join Our RUST Community</h2>
-            <p>Ready to forge your legend in the world of RUST? Connect now and start your journey!</p>
+            <p>Ready to forge your legend in the world of RUST? Find us and start your journey!</p>
+            
+            <div style="margin: 20px 0; padding: 25px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 2px solid rgba(255, 255, 255, 0.2);">
+                <h3 style="margin: 0 0 15px 0; font-size: 1.4rem; color: #fff;">🔍 How to Find Our Server</h3>
+                <p style="margin: 0 0 10px 0; font-size: 1.2rem;">1. Launch RUST from Steam</p>
+                <p style="margin: 0 0 10px 0; font-size: 1.2rem;">2. Go to "Play Game" → "Browse Servers"</p>
+                <p style="margin: 0; font-size: 1.2rem;">3. Search for <strong>"Church of Sophia"</strong> and join!</p>
+            </div>
             
             <div class="server-ip">
                 <a href="https://discord.gg/krah7yy8" target="_blank" style="color: white; text-decoration: none; font-weight: bold; display: block;">
-                    🦄 DISCORD 🦄
+                    🦄 Join Our Discord Community 🦄
                 </a>
             </div>
             
-            <div style="margin: 20px 0;">
-                <a href="steam://connect/62.163.6.252:28015" style="background: linear-gradient(135deg, #ff6b35, #ff4500); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4); transition: all 0.3s ease; border: 2px solid #d4af37;">
-                    🚀 Launch RUST & Connect
-                </a>
-            </div>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 15px;">Join our Discord for updates, events, and community support!</p>
             
-            <p style="font-size: 0.9rem; opacity: 0.8;">Click the button above to automatically launch RUST and connect to our server!</p>
-            
-            <div style="margin: 20px 0; padding: 20px; background: rgba(139, 69, 19, 0.3); border-radius: 10px; border: 1px solid #8b4513;">
-                <p><strong>RUST Server Commands:</strong></p>
+            <div style="margin: 20px 0; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <p><strong>🎮 RUST Server Commands:</strong></p>
                 <p>Check your reputation: <strong>/rep</strong></p>
                 <p>View other players: <strong>/replist</strong></p>
                 <p>See server stats: <strong>/repstats</strong></p>
